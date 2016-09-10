@@ -55,11 +55,13 @@ def ProcessAuthor(chunk, index):
 		authors.append(chunk[start+len(left):len(chunk)])
 		#print("Author: " + chunk[start+len(left):len(chunk)])
 
+
 def WriteFile():
 	file = codecs.open('output.csv', 'w', 'utf-8')
 	for i in range(len(authors)):
 		file.write(authors[i]+"|"+quotes[i]+"\n")
 	file.close
+
 
 def Main():
 	for i in range(30):
@@ -68,5 +70,6 @@ def Main():
 	
 	print("Found: " + str(len(quotes)) + " quotes")
 	WriteFile()
+
 	
 Main()
